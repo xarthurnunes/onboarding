@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Onboarding</title>
+</head>
+
+<body class="bg-dark text-white">
+    <header>
+        <nav class="navbar navbar-light bg light">
+            <a href="/sistema/home"><span class="navbar-brand mb-o h1 text-white" style="font-weight: bold;">Onboarding</span></a>
+            <a class="btn btn-primary" href="/sistema/cadastraros">Cadastrar Onboarding</a>
+            <a class="btn btn-primary" href="/sistema/buscaros">Buscar Onboarding</a>
+        </nav>   
+       </header>
+       <nav aria-label="breadcrumb">
+           <ol class="breadcrumb bg-dark text-white" padding-left="0px;">
+               <li class="breadcrumb-item active" aria-current="page">Inicio / Mostrar Onboarding</li>
+           </ol>
+       </nav>
+    <div class="container">
+        <h1>Onboarding</h1>
+        <h2 th:text="${'Nome cliente: '+ ordemdeservico.nomeFuncionario}"></h2>
+        <h2 th:text="${'Login funcionário: '+ ordemdeservico.loginFuncionario}"></h2>
+        <h2 th:text="${'Necessidade de equipamento: '+ ordemdeservico.necessidadeEquipamento}"></h2>
+        <h2 th:text="${'Data Inicio: ' + ordemdeservico.dataInicio}"></h2>
+        <h2 th:text="${'Squad: '+ ordemdeservico.squad}"></h2>
+        <h2 th:text="${'Função: '+ ordemdeservico.funcao}"></h2>
+        <h2 th:text="${'Observação: ' + ordemdeservico.observacao}"></h2>
+        <a class="btn btn-primary" href="/sistema/buscaros">Voltar</a>
+    </div>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

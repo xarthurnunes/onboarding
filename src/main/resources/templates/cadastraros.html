@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Onboarding</title>
+</head>
+
+<body class="bg-dark text-white text-center">
+    <header>
+        <nav class="navbar navbar-light bg light">
+            <a href="/sistema/home"><span class="navbar-brand mb-o h1 text-white" style="font-weight: bold;">Onboarding</span></a>
+            <a class="btn btn-primary" href="/sistema/buscaros">Buscar Onboarding</a>
+        </nav>   
+       </header>
+       <nav aria-label="breadcrumb">
+           <ol class="breadcrumb bg-dark text-white" padding-left="0px;">
+               <li class="breadcrumb-item active" aria-current="page">Inicio / Cadastro de Onboarding</li>
+           </ol>
+       </nav>
+    <h1>Cadastro de Onboarding</h1>
+    <div class="container">
+        <form action="/sistema/cadastraros" method="POST">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="nomeFuncionario">Nome</label>
+                <div class="col-sm-5">
+                    <input id="nomeFuncionario" name="nomeFuncionario" type="text" th:value="${ordemdeservico.nomeFuncionario}"
+                        placeholder="Ex: João da Silva" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="loginFuncionario">Login que o funcionário deseja</label>
+                <div class="col-sm-5">
+                    <input id="loginFuncionario" name="loginFuncionario" type="text" th:value="${ordemdeservico.loginFuncionario}"
+                        placeholder="Ex: suporte.hydrasystems" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="necessidadeEquipamento">Necessidade de equipamento</label>
+                <div class="col-sm-5">
+                    <select th:field="*{ordemdeservico.necessidadeEquipamento}">
+                        <option th:value="Selecione">Selecione</option>
+                        <option th:value="Sim" th:text="Sim"></option>
+                        <option th:value="Não" th:text="Não"></option>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="dataInicio">Data de Início</label>
+                <div class="col-sm-5">
+                    <input id="dataInicio" name="dataInicio" type="date" th:value="${ordemdeservico.dataInicio}"
+                    class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="squad">Squad</label>
+                <div class="col-md-9">
+                    <input id="squad" name="squad" type="text" th:value="${ordemdeservico.squad}"
+                        placeholder="Ex: Arte" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="funcao">Função</label>
+                <div class="col-md-9">
+                    <input id="funcao" name="funcao" type="text" th:value="${ordemdeservico.funcao}"
+                        placeholder="Ex: Desenvolvedor" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="observacao">Observação</label>
+                <div class="col-md-9">
+                    <textarea class="form-control" id="observacao" name="observacao"
+                        th:value="${ordemdeservico.observacao}" placeholder="Escreva aqui caso tenha alguma observação"
+                        rows="5"></textarea>
+                </div>
+            </div>
+            <input type="hidden" name="id" th:value="${ordemdeservico.id}" />
+            <div class="form-group">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
